@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convite</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #e0e0e0;
+            margin: 0;
+        }
+        .card {
+            width: 320px;
+            height: 200px;
+            background: linear-gradient(135deg, #2c3e50, #4ca1af); /* Cores mais escuras */
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+        }
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+        }
+        .card-number {
+            font-size: 1.6em;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+        .card-name {
+            font-size: 1.2em;
+            color: #fff;
+        }
+        .logo {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            display: flex;
+            align-items: center;
+        }
+        .circle {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            margin-left: -10px;
+        }
+        .circle.yellow {
+            background-color: #ffcc00;
+        }
+        .circle.red {
+            background-color: #ff0000;
+        }
+    </style>
+</head>
+<body>
+    <div class="card" onclick="openMessagePage()">
+        <div class="card-number">1234 5678 9012 3456</div>
+        <div class="card-name">Barbara Cavala da Silva</div>
+        <div class="logo">
+            <div class="circle yellow"></div>
+            <div class="circle red"></div>
+        </div>
+    </div>
+
+    <script>
+        function openMessagePage() {
+            const newWindow = window.open('', '_blank');
+            newWindow.document.write(`
+                <!DOCTYPE html>
+                <html lang="pt-BR">
+                <head>
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <title>Mensagem</title>
+                    <style>
+                        body {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            height: 100vh;
+                            background-color: #f0f0f0;
+                            margin: 0;
+                            font-family: Arial, sans-serif;
+                        }
+                        .message {
+                            font-size: 2em;
+                            color: #333;
+                        }
+                    </style>
+                </head>
+                <body>
+                    <div class="message">Tem como usar seu cartão pra gente gastar R$40,00 de cerveja e R$60,00 p MOTEL? Dia 7 te pago!</div>
+                </body>
+                </html>
+            `);
+        }
+    </script>
+</body>
+</html>
